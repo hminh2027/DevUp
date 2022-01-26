@@ -1,0 +1,39 @@
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-sizing: border-box;    
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    margin-top: 2px;
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 50%;
+    z-index: 9999;
+    transition: all .3s ease;
+}
+
+.name {
+    font-weight: bold;
+    margin-top: .5rem;
+}
+
+.nav {
+    width: 70%;
+    margin: auto;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem 0;
+    padding: .5rem 0;
+}
+
+/* breakpoints */
+/* Mobile */
+@media only screen and (max-device-width : 480px) {
+    .container {
+        width: 100%;
+    }
+}

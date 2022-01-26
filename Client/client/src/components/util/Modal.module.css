@@ -1,0 +1,47 @@
+.modal {
+    position: fixed;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border-radius: 10px;
+    animation: fadeIn .3s;
+    overflow-x: hidden;
+    overflow-y: overlay;
+}
+
+.black_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+}
+
+.icon_wrapper {
+    position: absolute;
+    right: 5%;
+    top: 2%;
+    font-size: 1.5rem;
+    color: #6d7583;
+    transition: all .3s ease;
+    cursor: pointer;
+    display: flex;
+}
+
+.icon_wrapper:hover {
+    color: black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,18 @@
+.container {
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    font-size: 1rem;
+    padding: 1rem ;
+    cursor: default;
+    border-radius: 8px;
+    overflow-x: hidden;
+    overflow-y: overlay;
+}
+
+.container:hover {
+    overflow-y: overlay;
+}

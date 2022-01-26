@@ -1,0 +1,52 @@
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    font-weight: bold;
+}
+
+.limit_height {
+    height: 100%;
+    line-height: 200px;
+}
+
+.status {
+    font-size: 13rem;
+    text-shadow: 6px 5px 3px #5bb7ed;
+    letter-spacing: 5px;
+}
+
+.error {
+    font-size: 2.5rem;
+}
+
+p {
+    margin: 1rem 0;
+    font-weight: 400;
+}
+
+.btn {
+    padding: .7rem 2rem;
+    background-color: white;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .4s ease;
+    box-shadow: 3px 3px 2px #5bb7ed;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #5bb7ed;
+    border-color: #5bb7ed;
+    box-shadow: none;
+}

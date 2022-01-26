@@ -1,0 +1,21 @@
+/*  */
+.icon {
+    font-size: 1.5rem;
+    padding : 0 .8rem;
+}
+
+.option_item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.option_item:hover {
+    background-color: #F1F1F5;
+}
+
+.text {
+    padding: .5rem 1rem;
+    white-space: nowrap;
+}

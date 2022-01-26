@@ -1,0 +1,39 @@
+/* layout */
+.container {
+    width: 98%;
+    height: 100%;
+    display: flex;
+}
+
+/* Content */
+.content {
+    width: 100%;
+    overflow-y: overlay;
+    padding: 0 0 5rem;
+}
+
+.item {
+    cursor: pointer;
+    display: flex;
+    border-radius: 20px;
+    width: 50%;
+    margin: .5rem auto;
+}
+
+.item:hover {
+    background-color: #F1F1F5;
+}
+
+/* Others */
+.no_user {
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #6d7583;
+}
+
+.spinner_wrapper {
+    width: 20%;
+    margin: auto;
+}

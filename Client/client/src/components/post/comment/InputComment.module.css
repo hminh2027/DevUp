@@ -1,0 +1,29 @@
+.container {
+    width: 88%;
+    margin: auto;
+    padding: 3% 0;
+    display: flex;
+}
+
+.input_wrapper {
+    margin: 0 1%;
+    padding: 0% 2%;
+    width: 80%;
+    background-color: #ebebeba6;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input {
+    background-color: transparent;
+    font-size: 1.1rem;
+    width: 96%;
+    margin: .2rem auto;
+    outline: none;
+}
+
+.avatar img {
+    border-radius: 50%;
+}

@@ -1,0 +1,10 @@
+.avatar {
+    border-radius: 50%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.popup_card {
+    position: absolute;
+    bottom: 150%;
+}

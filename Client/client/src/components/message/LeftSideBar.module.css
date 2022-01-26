@@ -1,0 +1,31 @@
+.left_bar {
+    width: 23%;
+    height: 100%;
+    background-color: red;
+    
+}
+
+.container {
+    width: 87%;
+    margin: auto;
+}
+
+.heading {
+    display: flex;
+    padding: 3rem 0;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.search {
+    background-color: blue;
+}
+
+.input {
+
+}

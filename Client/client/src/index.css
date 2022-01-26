@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  font-family: 'Mukta', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,#root,body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+ul, li {
+  list-style: none;
+}
+
+code {
+    font-family: 'Mukta', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  font-family: 'Mukta', sans-serif;
+  border: none;
+  font-weight: bold;
+  letter-spacing:2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+img, video {
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  font-family: 'Mukta', sans-serif;
+  border: none;
+  resize: none;
+  word-wrap: break-word;
+
+}
+
+textarea:focus {
+  outline: none;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent ; 
+}
+  
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.452);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #656768; 
+}
+
+/* breakpoints */
+/* Tablets */
+@media only screen and (min-device-width : 768px) and (max-device-width: 1224px) {
+  html {
+    font-size: 16px!important;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}
+/* Mobile */
+@media only screen and (max-device-width : 480px) {
+  html {
+    font-size: 14px!important;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+}

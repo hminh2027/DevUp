@@ -1,0 +1,52 @@
+/* Follow */
+.follow {
+    border-top: 1px solid #dbdbdb;
+    margin: 1rem 0;
+}
+
+.heading {
+    font-weight: bold;
+    margin: .5rem 0;
+    letter-spacing: 1px;
+}
+
+.title_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 1.4rem;
+}
+
+.btn {
+    font-weight: bold;
+    color: #64BDF1;
+    border: none;
+}
+
+.btn:hover {
+    text-decoration: underline;
+}
+
+.body {
+    margin: 1rem 0;
+}
+
+.show_btn {
+    color: white;
+    width: 100%;
+    border-radius: 7px;
+    border: none;
+    background-color: #64BDF1;
+    padding: .8rem;
+    letter-spacing: 2px;
+    box-shadow: 0 0 4px rgb(0 0 0 / 10%), 0 0 8px rgb(0 0 0 / 10%);
+    transition: .4s ease;
+}
+
+.show_btn:hover {
+    background-color: white;
+    color: #64BDF1;
+}

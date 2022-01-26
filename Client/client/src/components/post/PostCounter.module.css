@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+    margin: .3rem auto;
+    color: #737c81af;
+    font-weight: 600;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn:hover {
+    text-decoration: underline;
+}
+
+.wrapper {
+    display: flex;
+}

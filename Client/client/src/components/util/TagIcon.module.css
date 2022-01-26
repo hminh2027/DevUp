@@ -1,0 +1,6 @@
+.tag_icon {
+    display: flex;
+    padding: .3rem;
+    border-radius: 50%;
+    font-size: 1.1rem;
+}

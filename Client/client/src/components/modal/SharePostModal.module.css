@@ -1,0 +1,39 @@
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.heading {
+    color: #6d7583;
+    border-bottom: 1px solid #6d7583;
+    padding: 1rem 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.usercard {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.textarea {
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.submit_btn {
+    padding : .7rem;
+    margin: 1rem 0;
+    border: none;
+    cursor: pointer;
+    background-color: #5BB7ED;
+    color: white;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: all .3s;
+    text-align: center;
+}

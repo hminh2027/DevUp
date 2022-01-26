@@ -1,0 +1,26 @@
+.container {
+    display: grid;
+    grid-gap: 1rem;
+    width: 100%;
+}
+
+.item_wrapper {
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dummy {
+    margin-top: 100%;    
+}
+
+.item {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}

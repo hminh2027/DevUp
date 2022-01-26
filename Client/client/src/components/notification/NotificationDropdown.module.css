@@ -1,0 +1,46 @@
+.heading {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 0;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.heading_option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.5;
+    position: relative;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.heading:hover .heading_option {
+    opacity: 1!important;
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.no_notice_wrapper {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.icon_wrapper {
+    font-size: 3rem;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.spinner_wrapper {
+    width: 15%;
+    margin: auto;
+}

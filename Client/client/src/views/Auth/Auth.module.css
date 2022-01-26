@@ -1,0 +1,96 @@
+.body {
+    height: 100%;
+    width: 100%;
+    background-image: url('../../assets/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    padding-bottom: 132px;
+    padding-top: 92px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) !important;
+    min-width: 500px;
+    height: 80%;
+    width: 100%;
+    perspective: 1000px;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    background-color:rgb(255, 255, 255);
+    position: relative;
+    transition: 0.5s ease-out;
+    transform-style: preserve-3d;
+}
+
+.login_form, .regis_form {
+    width: 50%;
+    position: relative;
+    background-color: white;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.logo_wrapper {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 4;
+    width: 5rem;
+}
+
+.dummy {
+    margin-top: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+/* Breakpoint */
+/* Tablets */
+@media only screen and (min-device-width : 768px) and (max-device-width: 1224px) {
+    .login_form, .regis_form {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .regis_form {
+        transform: rotateY(180deg);
+    }
+}
+/* Mobile */
+@media only screen and (max-device-width : 480px) {
+    .login_form, .regis_form {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .regis_form {
+        transform: rotateY(180deg);
+    }
+}

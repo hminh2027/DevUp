@@ -1,0 +1,34 @@
+.container {
+    width: 95%;
+    margin: auto;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.content {
+    overflow-y: overlay;
+    flex-grow: 1;
+}
+
+.add_card {
+    height: 100%;
+    background-color: #cccaca;
+    color: white;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    cursor: pointer;
+}

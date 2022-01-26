@@ -1,0 +1,42 @@
+/* Layout */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #FAFBFC;
+}
+
+.leftside {
+    width: 15%;
+    font-weight: 800;
+    border-right: 2px solid #F1F1F5;
+    height: 100%;
+    left: 0;
+    align-self: flex-start;
+    background-color:white;
+    
+}
+
+.middle {
+    overflow-y: hidden;
+    flex-grow: 1;
+    background-color: #fafbfc;
+}
+
+.middle:hover {
+    overflow-y: overlay;
+}
+
+/* Breakpoint */
+/* Tablets */
+@media only screen and (min-device-width : 768px) and (max-device-width: 1224px) {
+    .container {
+        width: 100%;
+    }
+}
+/* Mobile */
+@media only screen and (max-device-width : 480px) {
+    .container {
+        width: 100%;
+    }
+}

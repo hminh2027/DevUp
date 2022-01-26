@@ -1,0 +1,28 @@
+.container {
+    width: 100% !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    color: #6d7583;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab {
+    transition: all .4s;
+    box-sizing: border-box;
+    padding: .7rem 0rem;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.active {
+    color: black;
+    border-bottom: 1px solid black;
+}

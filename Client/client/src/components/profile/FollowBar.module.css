@@ -1,0 +1,25 @@
+.heading {
+    margin: auto;
+    text-align: center;
+    margin: 10%;
+}
+
+.title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.value {
+    color: #a5a5a5;
+}
+
+.list_items {
+    position: relative;
+    transition: all .4s;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+

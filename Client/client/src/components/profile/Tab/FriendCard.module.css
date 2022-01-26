@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.image_wrapper {
+    display: flex;
+    overflow: hidden;
+    height: 80%;
+}
+
+.image {
+    border-radius: 8px;
+    width: auto;
+    margin: auto;
+}
+
+.name {
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+.card {
+    transition: 1s;
+    width: 100%;
+    max-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    margin: .5rem auto;
+}
+
+.image {
+    object-fit: cover;
+    width: auto;
+    margin: 0 1rem;
+    border-radius: 50%;
+}
+
+.text_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #5bb7ed;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

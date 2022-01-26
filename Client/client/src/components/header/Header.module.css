@@ -1,0 +1,137 @@
+.header {
+    height: 10%;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid #F1F1F5;
+    position: sticky;
+    background-color: white;
+    z-index: 3;
+    top: 0;
+}
+
+.container {
+    position: relative;
+    left: 0;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    background-color: white;
+}
+/* Logo */
+.logo {
+    object-fit: cover;
+    height: 100%;
+    width: auto;
+}
+
+.icon_wrapper {
+    width: 10%;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+}
+
+/* Search bar */
+.search {
+    width: 60%;
+}
+
+/* Buttons group */
+.btn_group_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.btn_group {
+    display: flex;
+    align-items: center;
+}
+
+/* Buttons */
+.setting_btn, .noti_btn, .search_btn {
+    cursor: pointer;
+    width: 1.7rem;
+    height: 1.7rem;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.noti_btn {
+    background-color: #5BB7ED;
+    color: white;
+    margin: 0 1rem;
+}
+
+.search_btn {
+    background-color: #ebebeb;
+}
+
+.setting_btn {
+    background-color: #ebebeb;
+}
+
+.menu_btn {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Menu Animation */
+.menu_icon {
+    position: relative;
+    height: 15px;
+    width: 18px;
+}
+
+.line_1, .line_2, .line_3 {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: .3s ease;
+    position: absolute;
+}
+
+.line_1 {
+    top: 50%;
+    left: 0;
+    transform: translate(0%,-50%);
+}
+.line_2 {  
+    top: 0%;
+    left: 0; 
+}
+.line_3 {  
+    bottom: 0%;
+    left: 0; 
+}
+
+/* Dropdown */
+.search_dropdown {
+    position: absolute;
+    width: 100%;
+    top: 102%;
+    z-index: -1;
+}
+
+.noti_dropdown {
+    position: absolute;
+    width: 100%;
+    right: 0%;
+}
+
+.setting_dropdown {
+    position: absolute;
+    right: 5vw;
+}

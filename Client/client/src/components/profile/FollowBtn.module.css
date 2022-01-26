@@ -1,0 +1,33 @@
+.btn {
+    min-width: 7rem;
+    padding : .7rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: all .3s;
+    margin: auto 1rem;
+}
+
+.follow_btn {
+    background-color: #5BB7ED;
+    box-shadow: 0 0 8px rgb(0 0 0 / 10%), 0 0 16px rgb(0 0 0 / 10%);
+    color: white;
+}
+.follow_btn:hover {
+    background-color: white;
+    box-shadow: 0 0 10px #5BB7ED, 0 0 16px rgb(0 0 0 / 10%);
+    color: #5BB7ED;
+
+}
+.unfollow_btn {
+    background-color: #e7727d;
+    box-shadow: 0 0 8px rgb(0 0 0 / 10%), 0 0 16px rgb(0 0 0 / 10%);
+    color: white;
+}
+.unfollow_btn:hover {
+    background-color: white;
+    box-shadow: 0 0 10px #e7727d, 0 0 16px rgb(0 0 0 / 10%);
+    color: #e7727d;
+}

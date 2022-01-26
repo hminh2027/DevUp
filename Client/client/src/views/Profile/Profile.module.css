@@ -1,0 +1,192 @@
+/* Layout */
+.profile_wrapper {
+    display: flex;
+    width: 100%;
+    height: 90%;
+}
+
+.leftside {
+    min-width: 22%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* Profile Content */
+.profile {
+    padding-top: 1rem;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+}
+
+.background {
+    border-radius: 15px;
+    height: 30%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+    background-color: #d6d7d6;
+}
+
+.information {
+    margin: 2rem auto;
+    display: flex;
+    width: 96%;
+    justify-content: space-between;
+}
+
+.avatar_wrapper {
+    position: relative;
+    min-width: 15rem;
+    margin-right: 2rem;
+}
+
+.avatar {
+    background-color: #d6d7d6;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 7px solid #f2f2f2;
+    margin-bottom: -7px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    z-index: 1;
+}
+
+.introduce {
+    overflow: hidden;
+    flex-grow: 1;
+    font-size: 1.2rem;
+    min-height: 5rem;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bios {
+    color: #a5a5a5;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* Tabs */
+.tabs_wrapper {
+    border-top: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.tab {
+    box-sizing: border-box;
+    padding: 1rem 0;
+    margin: 0 2rem ;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+/* Tab content*/
+.tab_content {
+    padding-bottom: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.details {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.null {
+    text-align: center;
+    font-weight: bold;
+}
+
+/*  */
+.icon_wrapper {
+    display: flex;
+    margin-right: .5rem;
+}
+
+.text {
+    text-align: end;
+}
+
+.active {
+    border-top:'1px solid #262626';
+    margin: '-1px 2rem 0';
+}
+
+/* Post */
+.posts_wrapper {
+    min-height: 100%;
+}
+
+.spinner_wrapper {
+    width: 15%;
+    margin: auto;
+}
+
+/* breakpoints */
+/* Tablets */
+@media only screen and (min-device-width : 768px) and (max-device-width: 1224px) {
+    .avatar {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .profile {
+        width: 90%;
+    }
+    
+  }
+/* Mobile */
+@media only screen and (max-device-width : 480px) {
+    .avatar {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .information {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .introduce {
+        margin: 1rem 0;
+    }
+
+    .avatar_wrapper {
+        height: 6rem;
+        margin: 0;
+    }
+
+    .profile {
+        width: 90%;
+    }
+}

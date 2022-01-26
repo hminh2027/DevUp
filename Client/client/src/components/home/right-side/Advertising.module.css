@@ -1,0 +1,24 @@
+.body_wrapper {
+    width: 86%;
+    margin: auto;
+    padding: 1.3rem 0;
+    letter-spacing: 1px;
+}
+
+.image_wrapper {
+    width: 100%;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #6d7583;
+}
+
+.time {
+    font-size: .8rem;
+}
+
+.body {
+    margin: 1rem 0;
+}

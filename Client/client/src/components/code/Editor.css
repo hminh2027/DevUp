@@ -1,0 +1,70 @@
+.container {
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
+    transition: all .5s ease-in-out;
+    max-width: 100%;
+    min-width: 33%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor {
+    height: 100%;
+}
+
+.CodeMirror {
+    height: 100% !important;
+    border-right: 3px solid grey;
+    box-sizing: border-box;
+}
+
+.editor-container {
+    flex-grow: 1;
+}
+
+.heading {
+    background-color: #263238;
+    width: fit-content;
+    height: 2rem;
+    color: white;
+    border-top: 5px solid grey;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.label_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0rem 1rem;
+}
+
+.icon {
+    display: flex;
+}
+
+.name {
+    letter-spacing: 2px;
+    margin-left: .5rem;
+}
+
+.expand-btn {
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    bottom: 0;
+    color: white;
+    display: flex;
+    font-size: 1.2rem;
+    margin: .8rem;
+    cursor: pointer;
+}
+
+.collapsed {
+    max-width: 10%;
+    min-width: 10%;
+}

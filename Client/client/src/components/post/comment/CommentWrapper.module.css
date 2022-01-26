@@ -1,0 +1,21 @@
+.reply_wrapper {
+    max-width: 90%;
+    margin-left: auto;
+}
+
+.rep_input {
+    width: 96%;
+    margin-left: auto;
+}
+
+.toggle_cmt {
+    cursor: pointer;
+    color: #ff4242;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.toggle_cmt:hover {
+    text-decoration: underline;
+}

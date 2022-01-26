@@ -1,0 +1,15 @@
+.container {
+    width: 88%;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+.toggle_cmt {
+    cursor: pointer;
+    color: #ff4242;
+    font-weight: bold;
+}
+
+.toggle_cmt:hover {
+    text-decoration: underline;
+}

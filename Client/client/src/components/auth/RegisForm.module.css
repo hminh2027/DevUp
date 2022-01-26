@@ -1,0 +1,75 @@
+.form_wrapper {
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs_wrapper {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.input_wrapper {
+    width: 100%;
+    border: 2px solid #eef2f5;
+    box-sizing: border-box;
+    display: flex;
+    margin: .5rem 0;
+    padding: .5rem 0;
+}
+
+.input {
+    font-size: 1.1rem;
+    padding: 1rem 1.1rem;
+    width: 100%;
+}
+
+.icon_wrapper {
+    width: 15%;
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.login {
+    text-align: center;
+    color: #1090fe;
+    text-decoration: underline;
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+/* Breakpoint */
+/* Tablets */
+@media only screen and (min-device-width : 768px) and (max-device-width: 1224px) {
+    .form_wrapper {
+        width: 90%;
+    }
+}
+/* Mobile */
+@media only screen and (max-device-width : 480px) {
+    .form_wrapper {
+        width: 90%;
+    }
+}

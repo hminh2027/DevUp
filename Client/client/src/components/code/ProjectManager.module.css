@@ -1,0 +1,12 @@
+/*  */
+.project {
+    background-color: #fafafa;
+    width: 100%;
+    max-height: 85%;
+    flex-grow: 1;
+}
+
+.spinner_wrapper {
+    width: 15%;
+    margin: auto;
+}
