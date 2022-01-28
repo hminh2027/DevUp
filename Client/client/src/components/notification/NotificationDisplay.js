@@ -6,7 +6,6 @@ import {GrFormClose} from 'react-icons/gr'
 
 import { readNotice } from '../../store/actions/noticeAction'
 
-import RoundWrapper from '../util/RoundWrapper'
 import TagIcon from '../util/TagIcon'
 
 import styles from './NotificationDisplay.module.css'
@@ -26,7 +25,7 @@ const NotificationDisplay = () => {
         setIsShow(true)
         setMsg(notice.data[0])
 
-    },[notice])
+    },[notice.popup])
 
     useEffect(()=>{
         isShow && setTimeout(() => {

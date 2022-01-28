@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useMediaQuery } from 'react-responsive'
 
 import {MdFormatQuote, MdPhotoCamera, MdRemoveCircle} from 'react-icons/md'
 import {RiShareBoxLine} from 'react-icons/ri'
 import {IoFilmSharp} from 'react-icons/io5'
 
 import Card from '../util/Card'
+import TextareaAutosize from 'react-textarea-autosize'
 
 import {createPost} from '../../store/actions/postAction'
 import { addMedia } from '../util/Media'
 
-import TextareaAutosize from 'react-textarea-autosize'
-import { useMediaQuery } from 'react-responsive'
-
 import styles from './Status.module.css'
 
 const Status = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    const {auth, socket} = useSelector(state=>state);
+    const {auth, socket} = useSelector(state=>state)
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
     const isTablet = useMediaQuery({ query: '(min-device-width : 768px) and (max-device-width: 1224px)' })
@@ -26,11 +25,12 @@ const Status = () => {
     const [form,setForm] = useState({
         text: '',
         files: []
-    });
+    })
 
     useEffect(()=>{
-        if(!form.text.trim()) document.getElementById("submit").disabled = true;
-        else document.getElementById("submit").disabled = false;
+        if(!form.text.trim()) document.getElementById("submit").disabled = true
+        else document.getElementById("submit").disabled = false
+        
     },[form.text])
 
     const addAttachHandler = e => {
@@ -38,20 +38,20 @@ const Status = () => {
         const rs = addMedia(form.files, files)
         if(rs.error) return dispatch({ type: 'ALERT', payload: {error: rs.error} })
         setForm({...form, files: rs.success})
-        e.target.value=null;
+        e.target.value=null
     }
     
     const removeAttachmentHandler = () => {
         setForm({...form, files: []})
     }
 
-    const submitHandler = async e => {
-        e.preventDefault();
+    const submitHandler = e => {
+        e.preventDefault()
 
-        if(!form.text) return;
+        if(!form.text) return
         if(auth.token && form.text){
-            dispatch(createPost(form, auth, socket));
-            setForm({text: '', files: []});
+            dispatch(createPost(form, auth, socket))
+            setForm({text: '', files: []})
         }
     }
     return (

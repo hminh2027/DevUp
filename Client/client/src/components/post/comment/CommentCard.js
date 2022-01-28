@@ -5,63 +5,63 @@ import {Link} from 'react-router-dom'
 import { updateComment } from '../../../store/actions/commentAction'
 
 import CommentOption from './CommentOption'
-import RoundWrapper from '../../util/RoundWrapper'
 
 import {CgMoreAlt} from 'react-icons/cg'
 import {GoReply} from 'react-icons/go'
 
-import styles from './CommentCard.module.css'
-import TextareaAutosize from 'react-textarea-autosize'
 import moment from 'moment'
 import Avatar from '../../util/Avatar'
+import TextareaAutosize from 'react-textarea-autosize'
+
+import styles from './CommentCard.module.css'
 
 const CommentCard = ({post, comment, setOnReply}) => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    const [showOption, setShowOption] = useState(false);
-    const [body, setBody] = useState('');
-    const [showMore, setShowMore] = useState(false);
-    const [isLong, setIsLong] = useState(false);
-    const [isEdit, setIsEdit] = useState(false);
-    const [onSubmit, setOnSubmit] = useState(false);
+    const [showOption, setShowOption] = useState(false)
+    const [body, setBody] = useState('')
+    const [showMore, setShowMore] = useState(false)
+    const [isLong, setIsLong] = useState(false)
+    const [isEdit, setIsEdit] = useState(false)
+    const [onSubmit, setOnSubmit] = useState(false)
 
-    const {auth} = useSelector(state=>state);
+    const {auth} = useSelector(state=>state)
 
 
     useEffect(()=>{
-        if(onSubmit) submitHandler();
-    },[onSubmit]);
+        if(onSubmit) submitHandler()
+    },[onSubmit])
     
     useEffect(()=>{
-        setBody(comment.body);
-        setOnReply(false);
+        setBody(comment.body)
+        setOnReply(false)
     },[comment.body, isEdit])
 
     useEffect(()=> {
         if(body && body.length > 250) {
-            setIsLong(true);
-            setShowMore(true);
+            setIsLong(true)
+            setShowMore(true)
         }
-        else setIsLong(false);
+        else setIsLong(false)
     },[body])
 
     const submitHandler = () => {
-        const trimBody = body.trim();
-        if(trimBody=='') return setOnSubmit(false);
-        dispatch(updateComment(auth, trimBody, post, comment));
-        setIsEdit(false);
-        setOnSubmit(false);
+        const trimBody = body.trim()
+        if(trimBody=='') return setOnSubmit(false)
+        dispatch(updateComment(auth, trimBody, post, comment))
+        setIsEdit(false)
+        setOnSubmit(false)
     }
 
     const checkHandler = (e) => {
         if(e.charCode == 13) {
-            e.preventDefault();
-            setOnSubmit(true);
+            e.preventDefault()
+            setOnSubmit(true)
         }
     }
 
     const replyHandler = () => {
-        setOnReply(comment);
+        setOnReply(comment)
     }
 
     return (

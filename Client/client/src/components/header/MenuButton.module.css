@@ -1,0 +1,34 @@
+.menu_btn {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Menu Animation */
+.menu_icon {
+    position: relative;
+    height: 15px;
+    width: 18px;
+}
+
+.line_1, .line_2, .line_3 {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: .3s ease;
+    position: absolute;
+}
+
+.line_1 {
+    top: 50%;
+    left: 0;
+    transform: translate(0%,-50%);
+}
+.line_2 {  
+    top: 0%;
+    left: 0; 
+}
+.line_3 {  
+    bottom: 0%;
+    left: 0; 
+}

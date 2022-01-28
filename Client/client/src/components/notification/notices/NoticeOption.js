@@ -5,7 +5,7 @@ import {RiDeleteBinLine} from 'react-icons/ri'
 import {GoCheck} from 'react-icons/go'
 
 import DropdownCard from '../../util/DropdownCard'
-import { deleteNotice, readNotice, unreadNotice, getNotices } from '../../../store/actions/noticeAction'
+import { deleteNotice, readNotice, unreadNotice } from '../../../store/actions/noticeAction'
 
 import styles from './NoticeOption.module.css'
 
@@ -18,9 +18,8 @@ const NoticeOption = ({setIsShow, isShow, msg, setExiting, top}) => {
     }
 
     const deleteHandler = () => {
-        // setExiting(true)
+        setExiting(true)
         dispatch(deleteNotice(auth, msg._id))
-        dispatch(getNotices(auth))
     }
     
     return (

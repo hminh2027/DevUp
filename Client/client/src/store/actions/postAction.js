@@ -12,7 +12,6 @@ export const createPost = (data, auth, socket) => async (dispatch) => {
         const res = await postAPI('post', {body: data.text, media: media}, auth.token)
         const newPost = {...res.data.newPost, user: auth.user}
 
-        console.log(newPost)
         dispatch({type:'CREATE_POST', payload: newPost})
         dispatch({type: 'ALERT', payload: {success: res.data.msg}})
 

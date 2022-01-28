@@ -17,12 +17,14 @@ import ResponsiveMenu from './ResponsiveMenu'
 import Logo from '../../assets/logo.png'
 
 import styles from './Header.module.css'
+import MenuButton from './MenuButton'
 
 
 function Header() {
     const [showNoti, setShowNoti] = useState(false)
     const [showSetting, setShowSetting] = useState(false)
-    // responsive
+    
+    // responsive part
     const [showSearch, setShowSearch] = useState(false)
     const [showMenu, setShowMenu] = useState(false)
 
@@ -33,6 +35,7 @@ function Header() {
     useEffect(()=>{
         const readNotices = notice.data.filter(noti=>noti.isRead.every(id=>id!=auth.user._id))
         setNotiLength(readNotices.length)
+
     },[notice])
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
@@ -49,33 +52,27 @@ function Header() {
                 <div className={styles.btn_group_wrapper}>
                     <div className={styles.btn_group}>
                         {isDesktop ?
-                        <div style={isDesktop ? {width: '2.2rem', height: '2.2rem'}:{}} onClick={()=>setShowSetting(!showSetting)} className={styles.setting_btn}>
+                        <div onClick={()=>setShowSetting(!showSetting)} className={styles.setting_btn}>
                             <motion.div 
                             whileHover={{rotate: 90, scale: 1.1}} 
                             style={{display: 'flex', borderRadius: '50%'}}        
                             >                    
                                 <AiOutlineSetting />
                             </motion.div>
-                        </div>:
+                        </div>
+                        :
                         <div onClick={()=>setShowSearch(!showSearch)} className={styles.search_btn}>
                             <IoSearch/>
-                        </div>
-                        }
+                        </div>}
+                        
                         <div style={isDesktop ? {width: '2.2rem', height: '2.2rem', margin: '1.5rem'}:{}} onClick={()=>setShowNoti(!showNoti)} className={styles.noti_btn}>
                             {notiLength}
                         </div>
+
                         {isDesktop ?
-                        <div className={styles.avatar_btn}>
-                            <Avatar id={auth.user._id} src={auth.user.avatar} diameter='3.5rem' />
-                        </div>:
-                        <div onClick={()=>setShowMenu(!showMenu)} className={styles.menu_btn}>
-                            <div className={styles.menu_icon}>
-                                <div style={showMenu ? {left: '-100%', opacity: 0} : {}} className={styles.line_1}></div>
-                                <div style={showMenu ? {transformOrigin: 'left', transform: 'rotateZ(45deg)'} : {}} className={styles.line_2}></div>
-                                <div style={showMenu ? {transformOrigin: 'left', transform: 'rotateZ(-45deg)'} : {}} className={styles.line_3}></div>
-                            </div>
-                        </div>
-                        }
+                        <Avatar id={auth.user._id} src={auth.user.avatar} diameter='3.5rem' />
+                        :
+                        <MenuButton showMenu={showMenu} setShowMenu={setShowMenu} />}
                     </div>
                 </div>
             </div>

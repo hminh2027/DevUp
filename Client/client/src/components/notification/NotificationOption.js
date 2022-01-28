@@ -1,22 +1,26 @@
 import React from 'react'
-import DropdownCard from '../util/DropdownCard'
-import {RiDeleteBinLine} from 'react-icons/ri'
-import {GoCheck} from 'react-icons/go'
-import styles from './NotificationOption.module.css'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { deleteNotices, getNotices, readNotices } from '../../store/actions/noticeAction'
 
+import DropdownCard from '../util/DropdownCard'
+
+import {RiDeleteBinLine} from 'react-icons/ri'
+import {GoCheck} from 'react-icons/go'
+
+import styles from './NotificationOption.module.css'
+
 const NotificationOption = ({isShow, setIsShow}) => {
-    const dispatch = useDispatch();
-    const {auth} = useSelector(state=>state);
+    const dispatch = useDispatch()
+    const {auth} = useSelector(state=>state)
 
     const deleteHandler = () => {
-        dispatch(deleteNotices(auth));
+        dispatch(deleteNotices(auth))
     }
 
     const readHandler = async () => {
-        await dispatch(readNotices(auth));
-        await dispatch(getNotices(auth));
+        await dispatch(readNotices(auth))
+        await dispatch(getNotices(auth))
     }
 
     return (
