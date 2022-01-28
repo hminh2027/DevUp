@@ -22,7 +22,6 @@ export default function RegisForm({setIsLogin}) {
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
 
-
     const {username, email, password, password2} = regisForm
 
     const inputHandler = e => setRegisForm({...regisForm,[e.target.name]: e.target.value})

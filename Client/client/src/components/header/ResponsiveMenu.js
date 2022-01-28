@@ -55,11 +55,10 @@ const ResponsiveMenu = () => {
                     </li>
                     :
                     <Link key={index} to={e.path} replace>
-                    <li className={styles.item}>
-                        {e.label}
-                    </li>
-                    </Link>
-                    
+                        <li className={styles.item}>
+                            {e.label}
+                        </li>
+                    </Link>       
                 ))}
             </ul>
         </div>

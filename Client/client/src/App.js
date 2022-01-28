@@ -32,6 +32,7 @@ function App() {
     const socket = io()
     dispatch({type: 'SOCKET', payload: socket})
     return ()=> socket.close()
+    
   }, [dispatch])
 
   useEffect(()=>{

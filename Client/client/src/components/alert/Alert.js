@@ -1,20 +1,21 @@
 import React, { useEffect,useState } from 'react'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 import {useSelector} from 'react-redux'
-import { ToastContainer, toast } from 'react-toastify';
-import {Toast} from './Toast';
-import Loading from './Loading';
-toast.configure();
+
+import { ToastContainer, toast } from 'react-toastify'
+import {Toast} from './Toast'
+import Loading from './Loading'
+toast.configure()
 
 function Alert() {
-    const {alert} = useSelector(state => state);
+    const {alert} = useSelector(state => state)
 
     const [alertType, setAlertType] = useState({
         loading: false,
         success: '',
         error: '',
         warn: ''
-    });
+    })
 
     useEffect(()=>{
         if(alert == alertType){
@@ -29,12 +30,12 @@ function Alert() {
     },[alertType])
 
     useEffect(()=>{
-        setAlertType(alert);
+        setAlertType(alert)
     },[alert])
     
     return (
         <>
-            {alertType.loading && ReactDOM.createPortal(<Loading/>,portal)}      
+            {alertType.loading && ReactDOM.createPortal(<Loading/>, portal)}      
             {alertType.success &&  <Toast type="success" body={alertType.success} />}
             {alertType.error &&  <Toast type="error" body={alertType.error} />}
             {alertType.warn &&  <Toast color='black' type="warn" body={alertType.warn} />}

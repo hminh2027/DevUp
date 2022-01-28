@@ -1,0 +1,66 @@
+/* Tabs */
+.tabs_wrapper {
+    border-top: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.tab {
+    box-sizing: border-box;
+    padding: 1rem 0;
+    margin: 0 2rem ;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+/* Tab content*/
+.tab_content {
+    padding-bottom: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.details {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.null {
+    text-align: center;
+    font-weight: bold;
+}
+
+/*  */
+.icon_wrapper {
+    display: flex;
+    margin-right: .5rem;
+}
+
+.text {
+    text-align: end;
+}
+
+.active {
+    border-top:'1px solid #262626';
+    margin: '-1px 2rem 0';
+}
+
+.spinner_wrapper {
+    width: 15%;
+    margin: auto;
+}
+
+/* Post */
+.posts_wrapper {
+    min-height: 100%;
+}

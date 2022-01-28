@@ -23,7 +23,7 @@ const ProjectFolder = ({projects, name, showAdd}) => {
         
         {showAdd && projectTempArr.push(<div key='plus' onClick={()=>setShowNewModal(true)} className={styles.add_card}><FiPlusCircle/></div>)}
 
-        projects.map(e => {
+        projects.map((e, index) => {
                 projectTempArr.push(<ProjectCard key={e._id} project={e} />)
         })
         

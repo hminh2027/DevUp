@@ -1,8 +1,8 @@
-import React from 'react';
-import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React from 'react'
+import {  toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-toast.configure();
+toast.configure()
 
 export const Toast = (props) => {
     const config = {
@@ -16,13 +16,13 @@ export const Toast = (props) => {
     }
 
     if(props.type == 'success') {
-        toast.success(`✅ ${props.body.replace(/(\")+/g , '')}`, config);
+        toast.success(`✅ ${props.body.replace(/(\")+/g , '')}`, config)
     }
     else if(props.type == 'error') {
-        toast.error(`❌ ${props.body.replace(/(\")+/g , '')}`, config);
+        toast.error(`❌ ${props.body.replace(/(\")+/g , '')}`, config)
     }
     else if(props.type == 'warn') {
-        toast.warn(`⚠️ ${props.body.replace(/(\")+/g , '')}`, config);
+        toast.warn(`⚠️ ${props.body.replace(/(\")+/g , '')}`, config)
     }
 
     return (

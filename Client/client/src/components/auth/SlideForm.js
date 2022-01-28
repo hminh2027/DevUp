@@ -1,7 +1,8 @@
-import React from 'react';
-import styles from './SlideForm.module.css';
-import BorderButton from '../util/BorderButton';
-import {useState} from 'react';
+import React, {useState} from 'react'
+
+import BorderButton from '../util/BorderButton'
+
+import styles from './SlideForm.module.css'
 
 export default function SlideForm({isLogin, setIsLogin}) {
     const BODY_DATA_1 = {
@@ -9,7 +10,7 @@ export default function SlideForm({isLogin, setIsLogin}) {
         text1: 'You can create and post your experience here.',
         text2: 'Share your post - Increase your view.',
         valueBtn: 'Sign up'
-    };
+    }
 
     const BODY_DATA_2 = {
         title: 'already have one?',
@@ -18,11 +19,11 @@ export default function SlideForm({isLogin, setIsLogin}) {
         valueBtn: 'Log in'
     }
 
-    const [data,setData] = useState(BODY_DATA_1);
+    const [data,setData] = useState(BODY_DATA_1)
 
     const toggleSlide = () => {
-        setIsLogin(!isLogin);
-        if(!isLogin) setData(BODY_DATA_1);
+        setIsLogin(!isLogin)
+        if(!isLogin) setData(BODY_DATA_1)
         else setData(BODY_DATA_2)
     }
 

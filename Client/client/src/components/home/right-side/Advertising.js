@@ -7,7 +7,7 @@ import styles from './Advertising.module.css'
 
 const Advertising = () => {
     return (
-        <Card width={'100%'}>
+        <Card width='100%'>
                 <div className={styles.image_wrapper}>
                     <a href='https://www.facebook.com/swag.lauch/'>
                         <img src={Advertisement} alt='ads' />

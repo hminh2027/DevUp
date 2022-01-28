@@ -1,0 +1,22 @@
+.output {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+
+.expand_btn {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    color: black;
+    display: flex;
+    font-size: 1.2rem;
+    margin: .8rem;
+    cursor: pointer;
+}
+
+.collapsed {
+    height: 50%!important;
+}

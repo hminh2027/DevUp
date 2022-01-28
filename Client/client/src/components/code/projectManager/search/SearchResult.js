@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import Search from '../../../header/Search'
 import UserCard from '../../../util/UserCard'
-import { searchFriend, searchUser } from '../../../../store/actions/searchAction'
+import { searchUser } from '../../../../store/actions/searchAction'
 
 import { motion, AnimatePresence } from "framer-motion"
 

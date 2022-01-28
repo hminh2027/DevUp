@@ -8,7 +8,7 @@ import {ImCross} from 'react-icons/im'
 
 import styles from './PasswordModal.module.css'
 
-const PasswordModal = ({setChangePassword}) => {
+const PasswordModal = () => {
     const dispatch = useDispatch()
     const { auth } = useSelector(state=>state)
 
@@ -28,11 +28,6 @@ const PasswordModal = ({setChangePassword}) => {
 
     },[auth.isWrongPw])
 
-    const closeModal = () => {
-        dispatch({type: 'MODAL', payload: false})
-        setChangePassword(false)
-    }
-
     const inputHandler = e => setPasswordForm({...passwordForm,[e.target.name]: e.target.value})
 
     const checkHandler = () => {
@@ -49,7 +44,6 @@ const PasswordModal = ({setChangePassword}) => {
             return
         }
         dispatch(changePassword(auth, passwordForm))
-        return closeModal()        
     }
 
     return (

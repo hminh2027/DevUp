@@ -3,15 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import {SiHtml5, SiCsswizardry, SiJavascript} from 'react-icons/si'
-import {AiOutlineExpandAlt} from 'react-icons/ai'
-import {CgMinimizeAlt} from 'react-icons/cg'
-import {HiOutlinePlusSm} from 'react-icons/hi'
 
-import Editor from '../../components/code/Editor'
+import Editor from './sourceCode/Editor'
 
 import { editableProject, saveProject } from '../../store/actions/projectAction'
 
 import styles from './SourceCode.module.css'
+import CodeFrame from './sourceCode/CodeFrame'
 
 const SourceCode = () => {
     const dispatch = useDispatch()
@@ -20,7 +18,6 @@ const SourceCode = () => {
 
     const [isLoading, setIsLoading] = useState(false)
     const [isSave, setIsSave] = useState(false)
-    const [open, setOpen] = useState(false)
     const [isAutoSave, setAutoSave] = useState(true)
 
     const [html, setHtml] = useState('')
@@ -113,19 +110,7 @@ const SourceCode = () => {
                 icon={<SiJavascript/>}
                 />
             </div>
-            <div className={`${styles.output} ${open ? '' : styles.collapsed}`}>
-                <iframe
-                srcDoc={srcDoc}
-                title="output"
-                sandbox="allow-scripts"
-                frameBorder="0"
-                width="100%"
-                height="100%"
-                />
-                <div onClick={()=>setOpen(!open)} className={styles.expand_btn}>
-                    {open ? <CgMinimizeAlt/> : <AiOutlineExpandAlt/>}
-                </div>
-            </div>
+            <CodeFrame srcDoc={srcDoc} />
         </div>
     )
 }

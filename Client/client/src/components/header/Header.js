@@ -31,7 +31,7 @@ function Header() {
     const {auth, notice} = useSelector(state=>state)
 
     useEffect(()=>{
-        const readNotices = notice.data.filter(noti=>noti.isRead.every(id=>id!=auth.user._id));
+        const readNotices = notice.data.filter(noti=>noti.isRead.every(id=>id!=auth.user._id))
         setNotiLength(readNotices.length)
     },[notice])
 
@@ -40,7 +40,7 @@ function Header() {
     return (
         <div className={styles.header}>
             <div className={styles.container}>
-                <Link to={'/'} >
+                <Link to='/' >
                     <img className={styles.logo} src={Logo} alt='logo'/>
                 </Link>
                 {isDesktop && <div className={styles.search}>

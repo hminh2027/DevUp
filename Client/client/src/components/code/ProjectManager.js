@@ -14,6 +14,7 @@ const ProjectManager = () => {
     useEffect(()=>{
         dispatch(getOwnProjects(auth))
         dispatch(getShareProjects(auth))
+        
     },[auth.user._id])
     
     return (
