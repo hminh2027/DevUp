@@ -5,16 +5,20 @@ import {MdExpandMore} from 'react-icons/md'
 import styles from './CommentWrapper.module.css'
 
 const CommentWrapper = ({post, comment, replyComment}) => {
-    const [onReply, setOnReply] = useState(false);
-    const [cmtShowNumber, setCmtShowNumber] = useState(1);
-    const [showCmt, setShowCmt] = useState([]);
+    const [onReply, setOnReply] = useState(false)
+    const [cmtShowNumber, setCmtShowNumber] = useState(1)
+    const [showCmt, setShowCmt] = useState([])
 
     useEffect(()=>{
-        let index = replyComment.length - cmtShowNumber;
-        if(index <= 0) index=0;
-        setShowCmt(replyComment.slice(index));
+        const index = IndexCommentCalculate(replyComment.length - cmtShowNumber)
+        setShowCmt(replyComment.slice(index))
 
-    },[replyComment, cmtShowNumber]);
+    },[replyComment, cmtShowNumber])
+
+    const IndexCommentCalculate = (index) => {
+        if(index <= 0) index = 0
+        return index
+    }
 
     return (
         <div className={styles.comment_wrapper}>

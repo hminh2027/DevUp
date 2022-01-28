@@ -7,11 +7,11 @@ import { deleteComment } from '../../../store/actions/commentAction'
 import styles from './CommentOption.module.css'
 
 const CommentOption = ({setIsEdit, post, comment, isShow, setIsShow}) => {
-    const dispatch = useDispatch();
-    const {auth, socket} = useSelector(state=>state);
+    const dispatch = useDispatch()
+    const {auth, socket} = useSelector(state=>state)
 
     const deleteHandler = () => {
-        dispatch(deleteComment(auth, comment, post, socket));
+        dispatch(deleteComment(auth, comment, post, socket))
     }
 
     return (

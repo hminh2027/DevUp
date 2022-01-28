@@ -1,12 +1,12 @@
-const initialState = false;
+const initialState = false
 
 const socketReducer = (state=initialState, action) => {
     switch (action.type) {
         case 'SOCKET':
-            return action.payload;
+            return action.payload
         default:
-            return state;
+            return state
     }
 }
 
-export default socketReducer;
+export default socketReducer

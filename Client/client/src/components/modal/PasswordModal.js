@@ -8,7 +8,7 @@ import {ImCross} from 'react-icons/im'
 
 import styles from './PasswordModal.module.css'
 
-const PasswordModal = () => {
+const PasswordModal = ({setChangePassword}) => {
     const dispatch = useDispatch()
     const { auth } = useSelector(state=>state)
 
@@ -44,6 +44,11 @@ const PasswordModal = () => {
             return
         }
         dispatch(changePassword(auth, passwordForm))
+    }
+
+    const closeModal = () => {
+        dispatch({type: 'MODAL', payload: false})
+        setChangePassword(false)
     }
 
     return (

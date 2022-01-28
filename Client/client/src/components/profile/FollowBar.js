@@ -4,8 +4,9 @@ import FollowingBar from './Follow/FollowingBar'
 import FollowerBar from './Follow/FollowerBar'
 
 import styles from './FollowBar.module.css'
+
 const FollowBar = ({profile}) => {
-    const [isFollowing, setIsFollowing] = useState(true);
+    const [isFollowing, setIsFollowing] = useState(true)
     
     return (
         <>

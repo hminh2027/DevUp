@@ -1,7 +1,9 @@
 import React from 'react'
-import styles from './DropdownCard.module.css'
+
 import { motion, AnimatePresence } from "framer-motion"
 import OutsideClick from './OutsideClick'
+
+import styles from './DropdownCard.module.css'
 
 const DropdownCard = (props) => {
   const variants = {

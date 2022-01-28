@@ -35,6 +35,7 @@ const CommentCard = ({post, comment, setOnReply}) => {
     useEffect(()=>{
         setBody(comment.body)
         setOnReply(false)
+
     },[comment.body, isEdit])
 
     useEffect(()=> {
@@ -43,6 +44,7 @@ const CommentCard = ({post, comment, setOnReply}) => {
             setShowMore(true)
         }
         else setIsLong(false)
+        
     },[body])
 
     const submitHandler = () => {

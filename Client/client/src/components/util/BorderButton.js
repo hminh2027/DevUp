@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './BorderButton.module.css';
+
+import styles from './BorderButton.module.css'
 
 export default function BorderButton(props) {
 

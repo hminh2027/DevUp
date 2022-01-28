@@ -15,15 +15,15 @@ import { useMediaQuery } from 'react-responsive'
 import styles from './ReactBar.module.css'
 
 const ReactBar = ({post, setIsComment, isComment}) => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
 
-    const {auth, socket} = useSelector(state=>state);
+    const {auth, socket} = useSelector(state=>state)
     
-    const [showModal, setShowModal] = useState(false);
-    const [liked, setLiked] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false)
+    const [liked, setLiked] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
         if(post.likes.find(like=>like._id === auth.user._id)) setLiked(true)

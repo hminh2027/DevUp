@@ -1,4 +1,4 @@
-import { DeleteData, UpdateData } from "../EditData";
+import { DeleteData, UpdateData } from "../EditData"
 
 const initialState = {
     loading: false,
@@ -13,12 +13,12 @@ const noticeReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: action.payload
-            };
+            }
         case 'CREATE_NOTICE':
             return {
                 ...state,
                 data: [action.payload, ...state.data]
-            };
+            }
         case 'GET_NOTICES':
             return {
                 ...state,
@@ -45,9 +45,9 @@ const noticeReducer = (state = initialState, action) => {
                 data: UpdateData(state.data, action.payload._id, action.payload)
             }
         default:
-            return state;
+            return state
     }
 }
 
 
-export default noticeReducer;
+export default noticeReducer

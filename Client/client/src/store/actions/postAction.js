@@ -1,6 +1,6 @@
 import {deleteAPI, getAPI, patchAPI, postAPI} from '../../apis/Axios'
 import {upload} from '../../apis/Cloudinary'
-import {createNotice, deleteNotice, deletePostNotices} from './noticeAction'
+import {createNotice, deletePostNotices} from './noticeAction'
 
 export const createPost = (data, auth, socket) => async (dispatch) => {
     let media = []
@@ -97,14 +97,12 @@ export const deletePost = (auth, id) => async (dispatch) => {
 export const likePost = (auth, post, socket) => async (dispatch) => {
     if(auth.user._id === post.user._id) return dispatch({type: 'ALERT', payload: {warn: 'Dont like your own post! '}})
     const newPost = {...post, likes: [...post.likes, auth.user]}
+    dispatch({type: 'UPDATE_POST', payload: newPost})
+    socket.emit('likePost', newPost)
 
     try {
         await patchAPI(`post/${post._id}/like`, newPost, auth.token)
 
-        dispatch({type: 'UPDATE_POST', payload: newPost})
-
-        socket.emit('likePost', newPost)
-    
         const msg = {
             id: auth.user._id,
             receivers: auth.user.followers,
@@ -123,14 +121,14 @@ export const likePost = (auth, post, socket) => async (dispatch) => {
 }
 
 export const unlikePost = (auth, post, socket) => async (dispatch) => {
-    try {
-        await patchAPI(`post/${post._id}/unlike`, null, auth.token)
-        
-        const newLikes = post.likes.filter(like => like._id !== auth.user._id)
+    const newLikes = post.likes.filter(like => like._id !== auth.user._id)
         const newPost = {...post, likes: newLikes}
 
         dispatch({type: 'UPDATE_POST', payload: newPost})
         socket.emit('unlikePost', newPost)
+
+    try {
+        await patchAPI(`post/${post._id}/unlike`, null, auth.token)     
 
     } catch(err) {
         dispatch({type: 'ALERT', payload: {error: err.response.data.msg}})

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+
 import { follow, unfollow } from '../../store/actions/profileAction'
+
 import styles from './FollowBtn.module.css'
 
 const FollowBtn = ({user}) => {
@@ -37,9 +39,9 @@ const FollowBtn = ({user}) => {
     return (
         <>
         {followed ? 
-            <button className={`${styles.btn} ${styles.unfollow_btn}`} onClick={unfollowHandler} > Unfollow </button> :
-            <button className={`${styles.btn} ${styles.follow_btn}`} onClick={followHandler} > Follow </button>
-        }
+            <button className={`${styles.btn} ${styles.unfollow_btn}`} onClick={unfollowHandler} > Unfollow </button>
+            :
+            <button className={`${styles.btn} ${styles.follow_btn}`} onClick={followHandler} > Follow </button>}
         </>     
     )
 }

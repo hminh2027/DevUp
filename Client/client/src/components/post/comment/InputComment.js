@@ -15,31 +15,31 @@ const InputComment = ({onReply, post}) => {
     const {auth, socket} = useSelector(state=>state)
 
     useEffect(()=>{
-        if(onSubmit) submitHandler();
+        if(onSubmit) submitHandler()
     },[onSubmit])
 
     useEffect(()=>{
-        if(onReply) setBody(onReply.user.username);
+        if(onReply) setBody(onReply.user.username)
     },[onReply])
 
     const submitHandler = () => {
-        const trimBody = body.trim();
-        if(trimBody=='') return;
+        const trimBody = body.trim()
+        if(trimBody=='') return
         const newComment = {
             body: trimBody,
             createdAt: new Date().toISOString(),
             reply: onReply && (onReply.reply ? onReply.reply : onReply._id),
             tag: onReply && onReply.user
         }
-        dispatch(createComment(auth, newComment, post, socket));
-        setBody('');
-        setOnSubmit(false);
+        dispatch(createComment(auth, newComment, post, socket))
+        setBody('')
+        setOnSubmit(false)
     }
 
     const inputHandler = (e) => {
         if(e.charCode == 13) {
-            e.preventDefault();
-            setOnSubmit(true);
+            e.preventDefault()
+            setOnSubmit(true)
         }
     }
     

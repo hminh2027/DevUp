@@ -8,16 +8,16 @@ import styles from './Modal.module.css'
 const Modal = (props) => {
     const dispatch = useDispatch()
 
-    const offModal = () => {
-        dispatch({type:'MODAL', payload: false});
-        props.setIsEdit(false);
+    const closeModal = () => {
+        dispatch({type:'MODAL', payload: false})
+        props.setIsEdit(false)
     }
 
     return (
         <>
-            <div onClick={offModal} className={styles.black_bg}></div>
+            <div onClick={closeModal} className={styles.black_bg}></div>
             <div style={{width: props.width, height: props.height}} className={styles.modal}>
-                <div onClick={offModal} className={styles.icon_wrapper}><RiCloseLine/></div>
+                <div onClick={closeModal} className={styles.icon_wrapper}><RiCloseLine/></div>
                 {props.children}
             </div>
         </>

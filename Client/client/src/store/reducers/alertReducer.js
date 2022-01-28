@@ -8,11 +8,11 @@ const initialState = {
 const alertReducer = (state = initialState, action) => {
     switch (action.type){
         case 'ALERT':
-            return action.payload;
+            return action.payload
         default:
-            return state;
+            return state
     }
 }
 
 
-export default alertReducer;
+export default alertReducer

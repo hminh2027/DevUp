@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import { useDispatch } from 'react-redux'
+import { useMediaQuery } from 'react-responsive'
 
 import PasswordModal from '../modal/PasswordModal'
 import Modal from '../util/Modal'
 import DropdownCard from '../util/DropdownCard'
-import { useMediaQuery } from 'react-responsive'
 
 import {IoExitOutline, IoLockClosedOutline} from 'react-icons/io5'
 import { logout } from '../../store/actions/authAction'
