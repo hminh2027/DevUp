@@ -37,7 +37,7 @@ const PostContent = ({post}) => {
             itemClass={styles.carousel_item}
             className={styles.carousel_container}>
                 {post.media.map((file,index)=>(
-                    <Link key={index} style={{width: '100%'}} to={`/post/${post._id}`} replace>
+                    <Link key={index} style={{width: '100%'}} to={`/post/${post._id}`}>
                       <div className={styles.image_wrapper}>
                         {
                           file.url.match(/video/i)

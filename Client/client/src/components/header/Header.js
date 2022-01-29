@@ -70,7 +70,10 @@ function Header() {
                         </div>
 
                         {isDesktop ?
-                        <Avatar id={auth.user._id} src={auth.user.avatar} diameter='3.5rem' />
+                        <Link to={`/profile/${auth.user._id}`} className={styles.avatar_wrapper}>
+                            <div className={styles.name}>{auth.user.username}</div>
+                            <Avatar id={auth.user._id} src={auth.user.avatar} diameter='3.5rem' />
+                        </Link>
                         :
                         <MenuButton showMenu={showMenu} setShowMenu={setShowMenu} />}
                     </div>

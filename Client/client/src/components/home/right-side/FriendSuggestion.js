@@ -11,6 +11,7 @@ import {AiOutlineReload} from 'react-icons/ai'
 
 import { motion } from "framer-motion"
 import Spinner from '../../../assets/Spinner.png'
+
 import styles from './FriendSuggestion.module.css'
 
 const FriendSuggestion = () => {
@@ -44,13 +45,17 @@ const FriendSuggestion = () => {
                 <div className={styles.spinner_wrapper}><img src={Spinner} alt='spinner' /></div>
                 :
                 <div className={styles.suggestion}>
-                    {suggestion.users.length>0 && suggestion.users.map(user=>(
-                        <div key={user._id} className={styles.item_wrapper}>
+                    {suggestion.users.length>0 && suggestion.users.map((user, index)=>(
+                        <motion.div 
+                        key={user._id} 
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        className={styles.item_wrapper}>
                             <Link className={styles.item} to={`/profile/${user._id}`}>
                                 <UserCard height='3rem' color='#64BDF1' avatar={user.avatar} username={user.username}/>
                             </Link>
                             <FollowBtn user={user}/>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                 }            

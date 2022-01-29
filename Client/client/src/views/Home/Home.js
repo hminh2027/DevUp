@@ -11,10 +11,13 @@ import InfiniteList from '../../components/util/InfiniteList'
 import PostCard from '../../components/post/PostCard'
 import Advertising from '../../components/home/right-side/Advertising'
 import FriendSuggestion from '../../components/home/right-side/FriendSuggestion'
+import ResponsiveFriendSuggestion from '../../components/home/right-side/ResponsiveFriendSuggestion'
+import { motion } from 'framer-motion'
 
 import Spinner from '../../assets/Spinner.png'
+
 import styles from './Home.module.css'
-import ResponsiveFriendSuggestion from '../../components/home/right-side/ResponsiveFriendSuggestion'
+
 
 
 export default function Home() {
@@ -28,8 +31,6 @@ export default function Home() {
     },[auth.user._id])
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
-    // const isTablet = useMediaQuery({ query: '(min-device-width : 768px) and (max-device-width: 1224px)' })
-    // const isMobile = useMediaQuery({ query: '(max-device-width : 480px)'})
 
     return (
         <>
@@ -48,8 +49,14 @@ export default function Home() {
                         </div>                      
                         :
                         <InfiniteList id={false} action='GET_MORE_POSTS' api='post' list={post.posts} elem='inf_posts' >
-                            {post.posts.length > 0 ? post.posts.map(post=>(
-                                <PostCard key={post._id} post={post} />
+                            {post.posts.length > 0 ? post.posts.map((post, index)=>(
+                                <motion.div
+                                initial={{transform: 'translateY(10%)', opacity: 0}}
+                                animate={{transform: 'translateY(0%)', opacity: 1, transitionDuration: `.3s`, transitionDelay:`${(index+1)*0.2}s`}}
+                                key={post._id}
+                                >
+                                    <PostCard post={post} />
+                                </motion.div>
                             ))
                             :
                             <div className={styles.no_post}>No post available!</div>}

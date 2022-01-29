@@ -30,9 +30,7 @@ export default function NavList() {
         <div className={styles.nav_list}>
             {items.map((e, index)=>(
                 <Link key={index} to={e.path} >
-                    <NavItem active={activeIndex == index} text={e.text} >
-                            {e.icon}
-                    </NavItem>
+                    <NavItem active={activeIndex == index} text={e.text} icon={e.icon} />
                 </Link>
             ))}
         </div>

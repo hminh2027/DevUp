@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import { motion } from 'framer-motion'
+
 import UserCard from '../../components/util/UserCard'
 import { getUsers } from '../../store/actions/peopleAction'
 import InfiniteList from '../../components/util/InfiniteList'
@@ -27,12 +29,16 @@ const People = () => {
                 </div>                      
                 :
                 (<InfiniteList id={false} action='GET_MORE_USERS' api='/user' list={people.users} elem='inf_users' >
-                    {people.users.length > 0 ? people.users.map(user => (
-                        <div className={styles.item}>
+                    {people.users.length > 0 ? people.users.map((user, index) => (
+                        <motion.div 
+                        key={index} 
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        className={styles.item}>
                             <Link  to={`profile/${user._id}`} >
                                 <UserCard height='3rem' avatar={user.avatar} username={user.username} />
                             </Link>
-                        </div>         
+                        </motion.div>         
                     ))
                     :
                     <div className={styles.no_user} >No user available!</div>

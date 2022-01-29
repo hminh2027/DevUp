@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 
 import SavedPost from '../../components/saved/SavedPost'
 

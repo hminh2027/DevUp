@@ -84,6 +84,36 @@
     height: 2.2rem;
 }
 
+.avatar_wrapper {
+    position: relative;
+}
+
+.avatar_wrapper:hover .name{
+    opacity: 1;
+}
+
+.name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+    transition: .4s ease;
+    z-index: 4;
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
 /* Dropdown */
 .search_dropdown {
     position: absolute;

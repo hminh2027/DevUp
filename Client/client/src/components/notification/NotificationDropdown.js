@@ -38,8 +38,8 @@ const NotificationDropdown = ({isShow, setIsShow}) => {
                     notice.data.length>0 ? notice.data.map((msg,index)=>(
                         <motion.div
                         key={index}
-                        initial={{transform: 'translate(150%,0)'}}
-                        animate={{transform: 'translate(0,0)', transitionDuration: `.6s`, transitionDelay:`${(index+1)*0.2}s`}}
+                        initial={{transform: 'translate(150%,0)', opacity: 0}}
+                        animate={{transform: 'translate(0,0)', opacity: 1, transitionDuration: `.6s`, transitionDelay:`${(index+1)*0.2}s`}}
                         >
                             <NoticeCard msg={msg} />
                         </motion.div>
