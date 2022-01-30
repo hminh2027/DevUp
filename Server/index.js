@@ -1,33 +1,34 @@
-const express = require('express');
-const mongoDB = require('./config/MongoDB');
-const Routers = require('./router/index');
-const cors = require('cors');
-const cookie = require('cookie-parser');
-const {SocketServer} = require('./SocketServer');
+const express = require('express')
+const mongoDB = require('./config/MongoDB')
+const Routers = require('./router/index')
+const path = require('path')
+const cors = require('cors')
+const cookie = require('cookie-parser')
+const {SocketServer} = require('./SocketServer')
 
-const app = express();
+const app = express()
 
-app.use(express.json());
-app.use(express.urlencoded({ extended:true }));
-app.use(cors());
-app.use(cookie());
+app.use(express.json())
+app.use(express.urlencoded({ extended:true }))
+app.use(cors())
+app.use(cookie())
 
 // Socket
-const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+const http = require('http').createServer(app)
+const io = require('socket.io')(http)
 
-const users = [];
+const users = []
 io.on('connection', socket => {
-    SocketServer(socket);
+    SocketServer(socket)
 })
 
 // Connect database
-mongoDB.connect();
+mongoDB.connect()
 // Routers
-Routers(app);
+Routers(app)
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000
 
 http.listen(PORT,()=>{
-    console.log("Server started at " + PORT);
+    console.log("Server started at " + PORT)
 })

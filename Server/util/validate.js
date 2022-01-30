@@ -1,4 +1,4 @@
-const joi = require('joi');
+const joi = require('joi')
 
 module.exports.validateSignup = (user) => {
     const schema = joi.object({
@@ -9,17 +9,17 @@ module.exports.validateSignup = (user) => {
         .label('Confirm password')
         .messages({ 'any.only': '{{#label}} does not match' }),
         email: joi.string().min(5).max(255).required().email()
-    });
-    return schema.validate(user);
-};
+    })
+    return schema.validate(user)
+}
 
 module.exports.validateLogin = (user) => {
     const schema = joi.object({
         email: joi.string().min(5).max(255).required().email(),
         password: joi.string().min(5).max(255).required(),
         remember: joi.boolean()
-    });
-    return schema.validate(user);
+    })
+    return schema.validate(user)
 }
 
 module.exports.validatePost = (post) => {
@@ -27,8 +27,8 @@ module.exports.validatePost = (post) => {
         body: joi.string(),
         image: joi.array(),
         file: joi.array()
-    });
-    return schema.validate(post);
+    })
+    return schema.validate(post)
 }
 
 module.exports.validateUser = (user) => {
@@ -40,6 +40,6 @@ module.exports.validateUser = (user) => {
         bio: joi.string().max(100),
         avatar: joi.string(),
         background: joi.string()
-    });
-    return schema.validate(user);
+    })
+    return schema.validate(user)
 }

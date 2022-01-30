@@ -14,4 +14,4 @@ router.patch('/:id/unfollow', auth, userController.unfollowUser)
 router.patch('/', auth, userController.updateUser)
 
 
-module.exports = router;
+module.exports = router
