@@ -9,6 +9,7 @@ toast.configure()
 
 function Alert() {
     const {alert} = useSelector(state => state)
+    const portal = document.getElementById('portal')
 
     const [alertType, setAlertType] = useState({
         loading: false,
