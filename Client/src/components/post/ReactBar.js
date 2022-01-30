@@ -18,6 +18,7 @@ const ReactBar = ({post, setIsComment, isComment}) => {
     const dispatch = useDispatch()
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const portal = document.getElementById('portal')
 
     const {auth, socket} = useSelector(state=>state)
     

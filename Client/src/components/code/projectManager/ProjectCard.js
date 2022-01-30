@@ -20,6 +20,7 @@ const ProjectCard = ({project}) => {
     const {auth} = useSelector(state=>state)
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const portal = document.getElementById('portal')
 
     const [isShowEditModal, setShowEditModal] = useState(false)
     const [isShowShareModal, setShowShareModal] = useState(false)

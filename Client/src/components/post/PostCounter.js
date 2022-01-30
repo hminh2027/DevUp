@@ -9,6 +9,7 @@ import styles from './PostCounter.module.css'
 
 const PostCounter = ({post}) => {
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const portal = document.getElementById('portal')
 
     const [isShowModal, setShowModal] = useState(false);
     

@@ -13,6 +13,7 @@ import styles from './ResponsiveFollow.module.css'
 
 const ResponsiveFollow = ({profile}) => {
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const portal = document.getElementById('portal')
 
     const [followers, setFollowers] = useState([])
     const [following, setFollowing] = useState([])

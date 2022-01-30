@@ -17,6 +17,7 @@ const ProjectFolder = ({projects, name, showAdd}) => {
     const [prjs, setPrjs] = useState([])
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const portal = document.getElementById('portal')
 
     useEffect(() => {
         let projectTempArr = []

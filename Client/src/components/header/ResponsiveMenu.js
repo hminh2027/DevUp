@@ -19,6 +19,7 @@ const ResponsiveMenu = () => {
     const [isChangePassword, setChangePassword] = useState(false);
 
     const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
+    const portal = document.getElementById('portal')
 
     const passwordModal = () => {
         dispatch({type: 'MODAL' , payload: true});
