@@ -6,12 +6,12 @@
   "scripts": {
     "start": "nodemon index",
     "server": "nodemon server.js",
-    "client": "cd client && npm run start",
+    "client": "cd Client && npm run start",
     "server-install": "npm install",
-    "client-install": "cd client && npm install",
+    "client-install": "cd Client && npm install",
     "install-all": "concurrently \"npm run server-install\" \"npm run client-install\" ",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd Client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
