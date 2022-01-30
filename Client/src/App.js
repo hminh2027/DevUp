@@ -22,7 +22,6 @@ function App() {
   
   const alert = document.getElementById('alert')
   const notification = document.getElementById('notification')
-  const portal = document.getElementById('portal')
 
   const  {auth}  = useSelector(state => state)
 

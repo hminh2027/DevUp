@@ -1,7 +1,6 @@
 const express = require('express')
 const mongoDB = require('./config/MongoDB')
 const Routers = require('./router/index')
-const path = require('path')
 const cors = require('cors')
 const cookie = require('cookie-parser')
 const {SocketServer} = require('./SocketServer')
@@ -17,13 +16,13 @@ app.use(cookie())
 const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 
-const users = []
 io.on('connection', socket => {
     SocketServer(socket)
 })
 
 // Connect database
 mongoDB.connect()
+
 // Routers
 Routers(app)
 
