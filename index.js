@@ -4,6 +4,7 @@ const Routers = require('./router/index')
 const cors = require('cors')
 const cookie = require('cookie-parser')
 const {SocketServer} = require('./SocketServer')
+const { ExpressPeerServer } = require('peer')
 
 const app = express()
 
@@ -20,11 +21,22 @@ io.on('connection', socket => {
     SocketServer(socket)
 })
 
+// Create peer server
+ExpressPeerServer(http, { path: '/' })
+
 // Connect database
 mongoDB.connect()
 
 // Routers
 Routers(app)
+
+// Port
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+    })
+}
 
 const PORT = process.env.PORT || 5000
 
