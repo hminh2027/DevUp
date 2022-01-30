@@ -33,7 +33,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "node app",
+    "start": "node app.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
