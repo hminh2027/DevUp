@@ -16,12 +16,6 @@ app.use(cookie())
 // Socket
 const http = require('http').createServer(app)
 
-const io = new Server(http, {
-    cors: {
-      origin: "https://client-dev-up.vercel.app"
-    }
-  })
-
 io.on('connection', socket => {
     SocketServer(socket)
 })

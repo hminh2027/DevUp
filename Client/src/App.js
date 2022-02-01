@@ -28,7 +28,7 @@ function App() {
 
   useEffect(()=>{
     dispatch(refreshToken())
-    const socket = io('https://nodejs-dev-up.herokuapp.com')
+    const socket = io()
     dispatch({type: 'SOCKET', payload: socket})
     return ()=> socket.close()
     

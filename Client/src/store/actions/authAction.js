@@ -62,7 +62,9 @@ export const refreshToken = () => async (dispatch) => {
     if(firstLogin) {
         try {
             dispatch({type: 'ALERT', payload: {loading: true}})
+
             const res = await postAPI('auth/refresh_token')
+            
             dispatch({type: 'AUTH', payload: {
                 token: res.data.access_token,
                 user: res.data.user

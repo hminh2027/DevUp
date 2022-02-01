@@ -136,36 +136,6 @@ module.exports.genAccessToken = async (req,res) => {
     }
 }
 
-module.exports.genAccessToken = async (req,res) => {
-    const RT = req.cookies.refreshtoken
-    if(!RT) return res.status(400).json({msg: 'Please login now!'})
-    try {
-        jwt.verify(RT,process.env.RTKEY, async (err,result) => {
-            if(err) return result.status(400).json({msg: 'Please login now!'})
-
-            const user = await User.findById(result.id).select("-password")
-            .populate({
-                path: 'saved followers following',
-                select: 'media body followers following username avatar',
-                populate: { path: 'user', select: 'username avatar' }
-            })
-
-            if(!user) return res.status(400).json({msg: 'User not found!'})
-
-            // Create new AT 
-            const access_token = user.genAccessToken({id: result.id})
-
-            res.json({
-                access_token,
-                user
-            })
-        })
-        
-    } catch(err){
-        return res.status(500).json({msg: err.message})
-    }
-}
-
 module.exports.changePassword = async (req,res) => {
     try {
         const {oldPw, newPw} = req.body.form
