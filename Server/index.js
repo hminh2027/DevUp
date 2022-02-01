@@ -4,7 +4,6 @@ const Routers = require('./router/index')
 const cors = require('cors')
 const cookie = require('cookie-parser')
 const {SocketServer} = require('./SocketServer')
-const  { Server } = require('socket.io')
 
 const app = express()
 
