@@ -48,7 +48,7 @@ export const logout = () => async (dispatch) => {
 
 export const changePassword = (auth, form) => async (dispatch) => {
     try {
-        const res = await postAPI(`/auth/changepw`, {form}, auth.token)
+        const res = await postAPI(`auth/changepw`, {form}, auth.token)
         dispatch({type: 'ALERT', payload: {success: res.data.msg}})
 
     } catch(err) {

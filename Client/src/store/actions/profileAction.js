@@ -6,7 +6,7 @@ export const getUser = (auth, id) => async (dispatch)=> {
     try {
         dispatch({type: 'LOADING_PROFILE', payload: true})
 
-        const res = await Promise.all([getAPI(`/user/${id}`, auth.token), await getAPI(`/post/user_posts/${id}`, auth.token)])
+        const res = await Promise.all([getAPI(`user/${id}`, auth.token), await getAPI(`post/user_posts/${id}`, auth.token)])
 
         dispatch({type:'GET_USER', payload: res[0].data.user})
         dispatch({type:'GET_POSTS', payload: res[1].data.result})
