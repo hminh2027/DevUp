@@ -17,7 +17,7 @@ export const createPost = (data, auth, socket) => async (dispatch) => {
 
         let msg = {
             id: res.data.newPost._id,
-            receivers: newPost.user.followers,
+            receivers: auth.user.followers,
             url: res.data.newPost._id,
             type: 'post',
             body: data.body
@@ -105,7 +105,7 @@ export const likePost = (auth, post, socket) => async (dispatch) => {
 
         const msg = {
             id: auth.user._id,
-            receivers: auth.user.followers,
+            receivers: post.user._id,
             text: 'like your post!',
             type: 'post',
             url: newPost._id,
@@ -140,15 +140,13 @@ export const sharePost = (auth, post, body, socket) => async (dispatch) => {
         const res = await postAPI(`post/${post._id}/share`, {post, body}, auth.token)
         const newPost = {...res.data.newPost, user: auth.user}
 
-        console.log(newPost)
-
         dispatch({type:'CREATE_POST', payload: newPost})
 
         console.log('wtf')
 
         let msg = {
             id: newPost._id,
-            receivers: newPost.user.followers,
+            receivers: auth.user.followers,
             url: newPost._id,
             body: body,
             type: 'post',
