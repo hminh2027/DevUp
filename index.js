@@ -4,7 +4,7 @@ const Routers = require('./router/index')
 const cors = require('cors')
 const cookie = require('cookie-parser')
 const {SocketServer} = require('./SocketServer')
-const { ExpressPeerServer } = require('peer')
+const  { Server } = require('socket.io')
 
 const app = express()
 
@@ -15,14 +15,16 @@ app.use(cookie())
 
 // Socket
 const http = require('http').createServer(app)
-const io = require('socket.io')(http)
+
+const io = new Server(http, {
+    cors: {
+      origin: "https://client-dev-up.vercel.app"
+    }
+  })
 
 io.on('connection', socket => {
     SocketServer(socket)
 })
-
-// Create peer server
-ExpressPeerServer(http, { path: '/' })
 
 // Connect database
 mongoDB.connect()
