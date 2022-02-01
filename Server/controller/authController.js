@@ -23,7 +23,7 @@ module.exports.login = async (req,res) => {
         // Hash now pw then compare with db pw
         const match = await bcrypt.compare(req.body.password,user.password)
         if(!match) return res.status(400).json({msg: "Invalid email or password"})
-        if(!user.isActive) return res.status(400).send('Please active the user!')
+        //if(!user.isActive) return res.status(400).json({msg: "Please active the user!"})
 
         // Gen 2 token
         const access_token = user.genAccessToken({id: user.id})

@@ -4,6 +4,7 @@ const Routers = require('./router/index')
 const cors = require('cors')
 const cookie = require('cookie-parser')
 const {SocketServer} = require('./SocketServer')
+const  { Server } = require('socket.io')
 
 const app = express()
 
@@ -14,6 +15,13 @@ app.use(cookie())
 
 // Socket
 const http = require('http').createServer(app)
+
+const io = new Server(http, {
+    cors: {
+      origin: true,
+      credentials: true
+    }
+})
 
 io.on('connection', socket => {
     SocketServer(socket)
